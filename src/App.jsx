@@ -64,26 +64,26 @@ export default function ExchangeTable() {
   };
 
   return (
-    <div className="container">
-      <h1 className="PeterExchange">PETER EXCHANGE</h1>
-      <table>
+    <div className="h-screen">
+      <h1 className="text-3xl md:text-md lg:text-3xl text-center font-bold">PETER EXCHANGE</h1>
+      <table className="w-full h-full">
         <thead>
-          <tr style={{ backgroundColor: "navy" }}>
-            <th style={{ backgroundColor: "#B0DAFF" }}></th>
-            <th style={{ fontSize: "50px", color: "navy", backgroundColor: "#B0DAFF" }}></th>
-            <th style={{ fontSize: "50px", color: "navy", backgroundColor: "#B0DAFF" }}>Currency</th>
-            <th style={{ fontSize: "50px", color: "navy", backgroundColor: "#B0DAFF" }}>Rate</th>
+          <tr className="bg-navy">
+            <th className=""></th>
+            <th className="text-2xl md:text-md lg:text-2xl"></th>
+            <th className="text-2xl md:text-md lg:text-2xl text-left">Currency</th>
+            <th className="text-2xl md:text-md lg:text-2xl">Rate</th>
           </tr>
         </thead>
         <tbody className="table-body">
           {tableData.map((row, index) => (
             <tr key={index}>
               <td>
-                <img src={row[0]} alt={row[2]} className="flag" style={{ width: "60px", height: "60px" }} />
+                <img src={row[0]} alt={row[2]} className="w-12" />
               </td>
-              <td style={{ fontSize: "50px" }}>{row[1]}</td>
-              <td style={{ fontSize: "35px" }}>{row[2]}</td>
-              <td style={{ fontSize: "50px" }}>{row[3]}</td>
+              <td className="text-2xl md:text-md lg:text-2xl">{row[1]}</td>
+              <td className="text-2xl md:text-md lg:text-2xl">{row[2]}</td>
+              <td className="text-4xl md:text-md lg:text-4xl">{row[3]}</td>
             </tr>
           ))}
         </tbody>

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   font-family: "Nunito", sans-serif;
 }
@@ -25,50 +29,44 @@ td {
   font-family: "Nunito", sans-serif;
 }
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
+
 
 .table-body tr:nth-child(odd) {
-  background-color: #f9b953;
+  background-color: #fdf180;
 }
 
 .table-body tr:nth-child(even) {
-  background-color: #d4d4d4;
+  background-color: #ffffff;
 }
 
 .flag {
   width: 30px;
   height: auto;
   vertical-align: middle;
-  /* margin-right: 10px; */
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%; /* add this line */
+
+
+
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .flag {
+    width: 20px; /* Adjust flag size for smaller screens */
+  }
+
+  .PeterExchange {
+    font-size: 40px; /* Adjust heading size for smaller screens */
+  }
 }
 
-.input {
-  width: 50%;
-  padding: 5px;
-  font-size: 40px;
-  color: navy;
-  border: none;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-  font-family: "Nunito", sans-serif;
-  margin-left: auto;
-  font-weight: bold;
-}
 
-.PeterExchange {
-  position: relative;
-  font-size: 60px;
-  color: navy;
-}
