@@ -1,0 +1,74 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  font-family: "Kanit", sans-serif;
+}
+
+h2 {
+  font-family: "Press Start 2P", cursive;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: "Nunito", sans-serif;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table-body tr:nth-child(odd) {
+  background-color: #f9b953;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #d4d4d4;
+}
+
+.flag {
+  width: 30px;
+  height: auto;
+  vertical-align: middle;
+  /* margin-right: 10px; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; /* add this line */
+}
+
+.input {
+  width: 50%;
+  padding: 5px;
+  font-size: 40px;
+  color: navy;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  font-family: "Nunito", sans-serif;
+  margin-left: auto;
+  font-weight: bold;
+}
+
+.PeterExchange {
+  position: relative;
+  font-size: 60px;
+  color: navy;
+}
