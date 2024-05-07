@@ -22,7 +22,7 @@ const currencyOrder = [
   "South Korean Won",
 ];
 
-export default function Airtable() {
+export default function ExchangeTable() {
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Airtable() {
     try {
       const response = await axios.get('https://api.airtable.com/v0/appXvdgNSlqDP9QwS/Table%201', {
         headers: {
-          Authorization: 'Bearer patJrmzFDvT8Qncac.770f95a2b3675ea77265ff2beee00d2250836d5d4ab5aead6dd18e042972f110',
+          Authorization: 'Bearer patJrmzFDvT8Qncac.657ccc7a50caaebd1e4a3a390acca8e67d06047dd779d5726b602d4febe8e383',
         },
       });
 
@@ -48,13 +48,14 @@ export default function Airtable() {
       });
 
       const formattedData = records
-        .map((record) => [
-          record.fields.Flags[0].url,
+      .map((record) => [
+          (record.fields.Flags && record.fields.Flags[0] && record.fields.Flags[0].url) || "", // Check if Flags and its first element exist before accessing url
           record.fields.Cur,
-          record.fields.Currency.trim(),
+          record.fields.Currency ? record.fields.Currency.trim() : "", // Check if Currency exists before trimming
           record.fields.Rate,
-        ])
-        .sort((a, b) => currencyIndices[a[2].trim().toLowerCase()] - currencyIndices[b[2].trim().toLowerCase()]);
+      ])
+      .sort((a, b) => currencyIndices[(a[2] || "").trim().toLowerCase()] - currencyIndices[(b[2] || "").trim().toLowerCase()]);
+  
 
       setTableData(formattedData);
     } catch (error) {
